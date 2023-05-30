@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("post_id")->references("id")->on("post")->onDelete("cascade")->onUpdate("cascade");
+            $table->foreignId("post_id")->references("id")->on("posts")->onDelete("cascade")->onUpdate("cascade");
             $table->date('date');
             $table->string("readtime");
             $table->string("author");

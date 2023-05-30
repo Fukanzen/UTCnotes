@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Book;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index($id){
-        $books = Book::all();
+        $post = Post::all();
 
-        return view("homepage", compact("books"));
+        return view("homepage")-> with("curr", $post);
     }
 
     public function show($id){
-        $book = Book::find($id);
+        $book = Post::find($id);
 
-        return view("BookDetail", compact("book"));
+        return view("postdetail", compact("post"));
     }
 }

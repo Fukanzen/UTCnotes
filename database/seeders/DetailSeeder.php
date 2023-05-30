@@ -10,9 +10,6 @@ use Faker\Factory as Faker;
 
 class DetailSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $faker = Faker::create("id_ID");
@@ -23,7 +20,8 @@ class DetailSeeder extends Seeder
                 "post_id" => $post_id[$i],
                 "date" => $faker->dateTime(),
                 "author" => $faker->name(),
-                "body" => $faker->paragraph()            
+                "body" => $faker->paragraph(),
+                "readtime" => 0
             ]);
         }
     }

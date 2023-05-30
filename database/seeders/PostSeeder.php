@@ -9,18 +9,16 @@ use Faker\Factory as Faker;
 
 class PostSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $faker = Faker::create("id_ID");
+
         for($i=0; $i<5; $i++){
             Post::create([
                 "title" => $faker->sentence(),
-                "desc" => $faker->sentences()
+                "desc" => $faker->sentence()
             ]);
         }
-        
+
     }
 }
